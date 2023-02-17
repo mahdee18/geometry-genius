@@ -32,9 +32,9 @@
                     <img class="w-full rounded-lg mb-4" src="./images/triangle.png" alt="Triangle">
                     <h2 class="text-2xl font-bold mb-2">Triangle</h2>
                     <p>Area (A) = 0.5 * b * h</p>
-                    <div class="my-5"><input id="tri-base" class="w-3/12 border-2 border-black rounded pl-1" placeholder="b"
-                            type="text"> cm <input id="tri-height" type="text" class="w-3/12 border-2 border-black rounded pl-1"
-                            placeholder="h"> cm</div>
+                    <div class="my-5"><input id="tri-base" class="w-3/12 border-2 border-black rounded pl-1"
+                            placeholder="b" type="text"> cm <input id="tri-height" type="text"
+                            class="w-3/12 border-2 border-black rounded pl-1" placeholder="h"> cm</div>
                     <button id="btn-triangle"
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-4 mx-auto">Calculate</button>
                 </div>
@@ -42,24 +42,54 @@
                     <img class="w-full rounded-lg mb-4" src="./images/rectangle.png" alt="rectangle">
                     <h2 class="text-2xl font-bold mb-2">Rectangle</h2>
                     <p class="py-1">Area (A) = w * l</p>
-                    <div class="my-8"><input id="rec-width" class="w-3/12 border-2 border-black rounded pl-1" placeholder="w" type="text"> cm <input id="rec-length" type="text" class="w-3/12 border-2 border-black rounded pl-1"
-                            placeholder="l"> cm</div>
-                    <button id="btn-rectangle" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-4 mx-auto">Calculate</button>
+                    <div class="my-8"><input id="rec-width" class="w-3/12 border-2 border-black rounded pl-1"
+                            placeholder="w" type="text"> cm <input id="rec-length" type="text"
+                            class="w-3/12 border-2 border-black rounded pl-1" placeholder="l"> cm</div>
+                    <button id="btn-rectangle"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-4 mx-auto">Calculate</button>
                 </div>
                 <div class="bg-white rounded-lg p-10 text-center border-2 border-gray">
                     <img class="w-full rounded-lg mb-4" src="./images/parallelogram.png" alt="Parallelogram">
                     <h2 class="text-2xl font-bold mb-2">Parallelogram</h2>
                     <p class="pt-5">Area (A) = b * h</p>
-                    <p class="my-6">b=10cm, h=12cm</p>
-                    <button
+                    <p class="my-6">b=<span id="para-base">10</span> cm, h=<span id="para-height">12</span> cm</p>
+                    <button id='btn-parallelogram'
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-10 mx-auto">Calculate</button>
                 </div>
-                
+
                 <div class="bg-white shadow-lg border-2 border-gray rounded-lg p-4 text-center">
                     <h1 class="font-semibold text-2xl underline mb-5">Area Calculation</h1>
-                    <h3 id="output"></h3>
+                    <h3 id="output-rectangle" class="text-xl"></h3>
+                    <h3 id="output-triangle" class="text-xl"></h3>
+                    <h3 id="output-parallelogram" class="text-xl"></h3>
+                    <h3 id="output-rhombus" class="text-xl"></h3>
+                    <h3 id="output-pentagon" class="text-xl"></h3>
+                    <h3 id="output-ellipse" class="text-xl"></h3>
                 </div>
-
+                <div class="bg-white rounded-lg p-10 text-center border-2 border-gray">
+                    <img class="w-full rounded-lg mb-4" src="./images/rhombus.png" alt="Rhombus">
+                    <h2 class="text-2xl font-bold mb-2">Rhombus</h2>
+                    <p class="my-7">Area (A) = 0.5 * d<sub>1</sub> * d<sub>2</sub></p>
+                    <p class="my-5">d<sub>1</sub> = <span id="first-diagonal">16</span> cm * d<sub>2</sub>= <span id="second-diagonal">8</span> cm</p>
+                    <button id="btn-rhombus"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-4 mx-auto">Calculate</button>
+                </div>
+                <div class="bg-white rounded-lg p-10 text-center border-2 border-gray">
+                    <img class="w-full rounded-lg mb-4" src="./images/pentagon.png" alt="Pentagon">
+                    <h2 class="text-2xl font-bold mb-2">Pentagon</h2>
+                    <p>Area (A) = 0.5 * p * b</p>
+                    <p class="my-3">p = 6 cm, b = 10 cm</p>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-4 mx-auto">Calculate</button>
+                </div>
+                <div class="bg-white rounded-lg p-10 text-center border-2 border-gray">
+                    <img class="w-full rounded-lg mb-4" src="./images/ellipse.png" alt="Ellipse">
+                    <h2 class="text-2xl font-bold mb-2">Ellipse</h2>
+                    <p class="my-8">Area (A) = π*ab</p>
+                    <p class="my-8">a = 10 cm, b = 4 cm</p>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-7 mx-auto">Calculate</button>
+                </div>
             </div>
         </div>
     </main>
