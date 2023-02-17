@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry -Genius</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -19,6 +20,27 @@
         </div>
     </header>
     <!-- Header Section End -->
+
+
+    <!-- Card Section Start -->
+    <main>
+        <div class="container mx-auto mt-10">
+            <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white rounded-lg p-10 text-center border-2 border-gray">
+                    <img class="w-full rounded-lg mb-4" src="./images/triangle.png" alt="Triangle">
+                    <h2 class="text-2xl font-bold mb-2">Triangle</h2>
+                    <p>Area (A) = 0.5 * b * h</p>
+                    <div class="my-5"><input class="w-3/12 border-2 border-black rounded pl-1" placeholder="b"
+                            type="text"> cm <input type="text" class="w-3/12 border-2 border-black rounded pl-1"
+                            placeholder="h"> cm</div>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-4 mx-auto">Calculate</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <!-- Card Section End -->
 
     <script src="./js/script.js"></script>
 </body>
