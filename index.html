@@ -27,15 +27,15 @@
 
 
     <!-- Card Section Start -->
-    <section class=" container my-10 mx-auto flex justify-between flex-wrap">
-        <section class=" max-w-[900px] grid grid-cols-1 md:grid-cols-3 gap-4">
+    <section class=" container my-10 mx-auto flex justify-between flex-wrap gap-3">
+        <section class=" max-w-[850px] grid grid-cols-1 md:grid-cols-3 gap-4">
             <!-- Triangle -->
             <div id="triangle-random" class="bg-white rounded-lg p-10 text-center border-2 border-gray card">
                 <img class="w-[250px] rounded-lg mb-4" src="./images/triangle.png" alt="Triangle">
                 <h2 class="text-2xl font-bold mb-2">Triangle</h2>
                 <p>Area (A) = 0.5 * b * h</p>
-                <div class="my-5"><input id="tri-base" class="w-3/12 border-2 border-black rounded pl-1"
-                        placeholder="b" type="text"> cm <input id="tri-height" type="text"
+                <div class="my-5"><input id="tri-base" class="w-3/12 border-2 border-black rounded pl-1" placeholder="b"
+                        type="text"> cm <input id="tri-height" type="text"
                         class="w-3/12 border-2 border-black rounded pl-1" placeholder="h"> cm</div>
                 <button id="btn-triangle"
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-4 mx-auto">Calculate</button>
@@ -75,8 +75,7 @@
                 <img class="w-[350px] rounded-lg mb-4" src="./images/pentagon.png" alt="Pentagon">
                 <h2 class="text-2xl font-bold mb-2">Pentagon</h2>
                 <p>Area (A) = 0.5 * p * b</p>
-                <p class="my-3">p = <span id='penta-perimeter'>6</span> cm, b = <span
-                        id="penta-apothem">10</span>
+                <p class="my-3">p = <span id='penta-perimeter'>6</span> cm, b = <span id="penta-apothem">10</span>
                     cm</p>
                 <button id="btn-pentagon"
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-4 mx-auto">Calculate</button>
@@ -93,37 +92,69 @@
 
 
         </section>
-<!-- Area Calculation Output -->
-<section class="w-[350px] h-[700px] lg:block bg-white shadow-lg border-2 border-gray rounded-lg p-4 text-center">
-    <h1 class="font-semibold text-2xl underline mb-5">Area Calculation</h1>
-    <div id="output-triangle" class="">
-        <button id="triangleButton" class="ml-20 hidden bg-[#1090D8] font-semibold text-md text-white rounded-lg py-1 px-2">Covert to
-            m<sup>2</sup></button>
-    </div>
-    <h3 id="output-rectangle" class="text-xl">
-        <!-- <h3 id="display-rectangle">
-            <span class="flex items-center justify-between gap-x-5 mt-4">
-                <p>Triangle area : <span id="output-rectangle" > 0</span>
-                    cm<sup>2</sup>
-                </p>
+        <!-- Area Calculation Output -->
+        <section class="w-[380px] max-h-[500px] rounded-lg border-2 border-gray-200 py-4 px-2">
+            <h3 class="font-semibold text-center underline text-2xl">Area Calculation</h3>
+            <div id="triangle-area-total" class="hidden">
+                <span class="flex items-center justify-between gap-x-5 mt-4">
+                    <p class="text-md">1. Triangle Area = <span id="triangle-area-output"
+                            class="font-semibold">0</span>cm<sup>2</sup></p>
+                    <button class="bg-[#1090D8] font-semibold text-md text-white rounded-lg py-1.5 px-2.5">Covert to
+                        m<sup>2</sup></button>
+                </span>
+            </div>
+            <div id="rectangle-area-total" class="hidden">
+                <span class="flex items-center justify-between gap-x-5 mt-4">
+                    <p class="text-md">2.Rectangle Area = <span id="rectangle-area-output"
+                            class="font-semibold">00</span>cm<sup>2</sup></p>
+                    <button class="bg-[#1090D8] font-semibold text-md text-white rounded-lg py-1.5 px-2.5">Covert to
+                        m<sup>2</sup></button>
+                </span>
+            </div>
 
-            </span>
-    
-        </h3> -->
-                        
-        <button id="rectangleButton" class="ml-20 hidden bg-[#1090D8] font-semibold text-md text-white rounded-lg py-1 px-2">Covert to
-            m<sup>2</sup></button>
-    </h3>
-    <h3 id="output-parallelogram" class="text-xl"></h3>
-    <h3 id="output-rhombus" class="text-xl my-2"></h3>
-    <h3 id="output-pentagon" class="text-xl"></h3>
-    <h3 id="output-ellipse" class="text-xl my-2"></h3>
-</section>
+            <div id="parallelogram-area-total" class="hidden">
+                <span class="flex items-center justify-between gap-x-5 mt-4">
+                    <p class="text-md">3. Parallelogram Area =<span id="parallelogram-area-output"
+                            class="font-semibold">00</span>cm<sup>2</sup></p>
+                    <button class="bg-[#1090D8] font-semibold text-md text-white rounded-lg py-1.5 px-2.5">Covert to
+                        m<sup>2</sup></button>
+                </span>
+            </div>
+
+            <div id="rhombus-area-total" class="hidden">
+                <span class="flex items-center justify-between gap-x-5 mt-4">
+                    <p class="text-md">4. Rhombus Area = <span id="rhombus-area-output"
+                            class="font-semibold">00</span>cm<sup>2</sup></p>
+                    <button class="bg-[#1090D8] font-semibold text-md text-white rounded-lg py-1.5 px-2.5">Covert to
+                        m<sup>2</sup></button>
+                </span>
+            </div>
+
+            <div id="pentagon-area-total" class="hidden">
+                <span class="flex items-center justify-between gap-x-5 mt-4">
+                    <p class="text-md">5. Pentagon Area = <span id="pentagon-area-output"
+                            class="font-semibold">00</span>cm<sup>2</sup></p>
+                    <button class="bg-[#1090D8] font-semibold text-md text-white rounded-lg py-1.5 px-2.5">Covert to
+                        m<sup>2</sup></button>
+                </span>
+            </div>
+
+            <div id="ellipse-area-total" class="hidden">
+                <span class="flex items-center justify-between gap-x-5 mt-4">
+                    <p class="text-md">6. Ellipse Area = <span id="ellipse-area-output"
+                            class="font-semibold">00</span>cm<sup>2</sup></p>
+                    <button class="bg-[#1090D8] font-semibold text-md text-white rounded-lg py-1.5 px-2.5">Covert to
+                        m<sup>2</sup></button>
+                </span>
+            </div>
+        </section>
     </section>
 
     <!-- Card Section End -->
+    
     <!-- Js CDN -->
-    <script src="./js/script.js"></script>
+    <script src="./js/commonUtilities.js"></script>
+    <script src="./js/area.js"></script>
     <script src="./js/randomColor.js"></script>
 </body>
 

@@ -1,45 +1,22 @@
-// Common Function
-function getInputValue(inputId) {
-    const inputField = document.getElementById(inputId)
-    const inputFieldString = inputField.value;
-    const inputFieldNumber = parseFloat(inputFieldString)
-    return inputFieldNumber;
-}
-function getInputText(textId) {
-    const textField = document.getElementById(textId)
-    const textFieldString = textField.innerText;
-    const textFieldNumber = parseFloat(textFieldString)
-    return textFieldNumber;
-}
-// OutPut Field for common Function
-let serialNumber = 0;
-
-function getOutputValue(outputId, value, superscriptText) {
-    serialNumber++;
-    const outputField = document.getElementById(outputId);
-    outputField.innerHTML = `${serialNumber}. ${value} cm <sup>${2}</sup>`;
-}
-
 
 //Get Triangle Area
 document.getElementById('btn-triangle').addEventListener('click', function () {
     const triangleBase = getInputValue('tri-base')
     const triangleHeight = getInputValue('tri-height')
     const triangleArea = 0.5 * triangleBase * triangleHeight;
-    const triangleAreaWithComment = 'Triangle Area is :' + triangleArea;
 
     // For Validation
     if (isNaN(triangleBase) || isNaN(triangleHeight) || triangleBase < 0 || triangleHeight < 0) {
         alert("Please input valid numbers");
         return;
     }
-    const outputField = getOutputValue('output-triangle', triangleAreaWithComment)
-    
-    const myButton = document.getElementById('triangleButton');
-    myButton.style.display = 'block';
+    const triangleAreaOutput = document.getElementById('triangle-area-output')
+    triangleAreaOutput.innerText = '0';
+    const totalTriangleArea = triangleArea + triangleAreaOutput.innerText;
+    triangleAreaOutput.innerText = totalTriangleArea;
+    getButtonById('triangle-area-total')
 
-})
-
+});
 
 
 // Get Rectangle Area
@@ -53,10 +30,11 @@ document.getElementById('btn-rectangle').addEventListener('click', function () {
         alert("Please input valid numbers");
         return;
     }
-    const outputField = getOutputValue('output-rectangle', rectangleAreaWithComment)
-
-    const myButton = document.getElementById('rectangleButton');
-    myButton.style.display = 'block';
+    const rectangleAreaOutput = document.getElementById('rectangle-area-output')
+    rectangleAreaOutput.innerText = '0';
+    const totalRectangleArea = rectangleArea + rectangleAreaOutput.innerText;
+    rectangleAreaOutput.innerText = totalRectangleArea;
+    getButtonById('rectangle-area-total')
 })
 
 // Get Parallelogram Area
@@ -64,8 +42,12 @@ document.getElementById('btn-parallelogram').addEventListener('click', function 
     const parallelogramBase = getInputText('para-base')
     const parallelogramHeight = getInputText('para-height')
     const parallelogramArea = parallelogramBase * parallelogramHeight;
-    const parallelogramAreaWithComment = 'Parallelogram Area is :' + ' ' + parallelogramArea;
-    const outputField = getOutputValue('output-parallelogram', parallelogramAreaWithComment)
+
+    const parallelogramAreaOutput = document.getElementById('parallelogram-area-output')
+    parallelogramAreaOutput.innerText = '0';
+    const totalParallelogramArea = parallelogramArea + parallelogramAreaOutput.innerText;
+    parallelogramAreaOutput.innerText = totalParallelogramArea;
+    getButtonById('parallelogram-area-total')
 
 })
 
@@ -74,8 +56,12 @@ document.getElementById('btn-rhombus').addEventListener('click', function () {
     const firstDiagonal = getInputText('first-diagonal')
     const secondDiagonal = getInputText('second-diagonal')
     const rhombusArea = 0.5 * firstDiagonal * secondDiagonal;
-    const rhombusAreaWithComment = 'Rhombus Area is :' + ' ' + rhombusArea;
-    const outputField = getOutputValue('output-rhombus', rhombusAreaWithComment)
+
+    const rhombusAreaOutput = document.getElementById('rhombus-area-output')
+    rhombusAreaOutput.innerText = '0';
+    const totalRhombusArea = rhombusArea + rhombusAreaOutput.innerText;
+    rhombusAreaOutput.innerText = totalRhombusArea;
+    getButtonById('rhombus-area-total')
 })
 
 // Get pentagon Area
@@ -83,9 +69,12 @@ document.getElementById('btn-pentagon').addEventListener('click', function () {
     const pentagonPerimeter = getInputText('penta-perimeter')
     const pentagonApothem = getInputText('penta-apothem')
     const pentagonArea = 0.5 * pentagonPerimeter * pentagonApothem;
-    console.log(pentagonArea);
-    const pentaAreaWithComment = 'Pentagon Area is :' + ' ' + pentagonArea;
-    const outputField = getOutputValue('output-pentagon', pentaAreaWithComment)
+
+    const pentagonAreaOutput = document.getElementById('pentagon-area-output')
+    pentagonAreaOutput.innerText = '0';
+    const totalPentagonArea = pentagonArea + pentagonAreaOutput.innerText;
+    pentagonAreaOutput.innerText = totalPentagonArea;
+    getButtonById('pentagon-area-total')
 })
 // Get Ellipse Area
 document.getElementById('btn-ellipse').addEventListener('click', function () {
@@ -93,8 +82,12 @@ document.getElementById('btn-ellipse').addEventListener('click', function () {
     const axisB = getInputText('axis-b')
     const PIE = 3.1416
     const ellipseArea = PIE * axisA * axisB;
-    const ellipseAreaWithComment = 'Ellipse Area is :' + ' ' + ellipseArea.toFixed(2);
-    const outputField = getOutputValue('output-ellipse', ellipseAreaWithComment)
+
+    const ellipseAreaOutput = document.getElementById('ellipse-area-output')
+    ellipseAreaOutput.innerText = '0';
+    const totalEllipseArea = ellipseArea + ellipseAreaOutput.innerText;
+    ellipseAreaOutput.innerText = totalEllipseArea;
+    getButtonById('ellipse-area-total')
 })
 
 
