@@ -36,12 +36,13 @@ document.getElementById('btn-triangle').addEventListener('click', function () {
 })
 
 
+
 // Get Rectangle Area
 document.getElementById('btn-rectangle').addEventListener('click', function () {
     const rectangleWidth = getInputValue('rec-width')
     const rectangleLength = getInputValue('rec-length')
     const rectangleArea = rectangleWidth * rectangleLength;
-    const rectangleAreaWithComment = 'Rectangle Area is :' + rectangleArea;
+    const rectangleAreaWithComment = 'Rectangle Area is :' + rectangleArea + 'cm';
     // For Validation
     if (isNaN(rectangleWidth) || isNaN(rectangleLength) || rectangleWidth < 0 || rectangleLength < 0) {
         alert("Please input valid numbers");

@@ -18,7 +18,9 @@
             <p class=" text-2xl font-semibold">Geometry Genius</p>
         </div>
         <div class="text-right py-10 mr-8">
-            <button class="bg-blue-500 rounded text-white font-semibold px-4 py-1">Blog</button>
+            <a href="./blog.html">
+                <button class="bg-blue-500 rounded text-white font-semibold px-4 py-1">Blog</button>
+            </a>
         </div>
     </header>
     <!-- Header Section End -->
@@ -29,7 +31,7 @@
         <div class="container mx-auto mt-10">
             <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <!-- Triangle -->
-                <div id="card" class="bg-white rounded-lg p-10 text-center border-2 border-gray card">
+                <div id="triangle-random" class="bg-white rounded-lg p-10 text-center border-2 border-gray card">
                     <img class="w-[250px] rounded-lg mb-4" src="./images/triangle.png" alt="Triangle">
                     <h2 class="text-2xl font-bold mb-2">Triangle</h2>
                     <p>Area (A) = 0.5 * b * h</p>
@@ -40,7 +42,7 @@
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-4 mx-auto">Calculate</button>
                 </div>
                 <!-- Rectangle -->
-                <div class="bg-white rounded-lg p-10 text-center border-2 border-gray card">
+                <div id="rectangle-random" class="bg-white rounded-lg p-10 text-center border-2 border-gray card">
                     <img class="w-[350px] rounded-lg mb-4" src="./images/rectangle.png" alt="rectangle">
                     <h2 class="text-2xl font-bold mb-2">Rectangle</h2>
                     <p class="py-1">Area (A) = w * l</p>
@@ -51,7 +53,7 @@
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-4 mx-auto">Calculate</button>
                 </div>
                 <!-- Parallelogram -->
-                <div class="bg-white rounded-lg p-10 text-center border-2 border-gray">
+                <div id="parallelogram-random" class="bg-white rounded-lg p-10 text-center border-2 border-gray">
                     <img class="w-[350px] rounded-lg mb-4" src="./images/parallelogram.png" alt="Parallelogram">
                     <h2 class="text-2xl font-bold mb-2">Parallelogram</h2>
                     <p class="pt-5">Area (A) = b * h</p>
@@ -62,7 +64,18 @@
 <!-- Area Calculation Output -->
                 <div class="hidden lg:block bg-white shadow-lg border-2 border-gray rounded-lg p-4 text-center">
                     <h1 class="font-semibold text-2xl underline mb-5">Area Calculation</h1>
-                    <h3 id="output-triangle" class="text-xl my-2"></h3>
+                    <h3>
+                        <span class="flex items-center justify-between gap-x-5 mt-4">
+                            <p id="output-triangle"class="">
+                                cm<sup>2</sup>
+                            </p>
+                            
+
+                            <button class="bg-[#1090D8] font-semibold text-md text-white rounded-lg py-1 px-2">Covert to
+                                m<sup>2</sup></button>
+                        </span>
+
+                    </h3>
                     <h3 id="output-rectangle" class="text-xl"></h3>
                     <h3 id="output-parallelogram" class="text-xl"></h3>
                     <h3 id="output-rhombus" class="text-xl my-2"></h3>
@@ -70,7 +83,7 @@
                     <h3 id="output-ellipse" class="text-xl my-2"></h3>
                 </div>
                 <!-- Rhombus -->
-                <div class="bg-white rounded-lg p-10 text-center border-2 border-gray">
+                <div id="rhombus-random" class="bg-white rounded-lg p-10 text-center border-2 border-gray">
                     <img class="w-[350px] rounded-lg mb-4" src="./images/rhombus.png" alt="Rhombus">
                     <h2 class="text-2xl font-bold mb-2">Rhombus</h2>
                     <p class="my-7">Area (A) = 0.5 * d<sub>1</sub> * d<sub>2</sub></p>
@@ -80,7 +93,7 @@
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-4 mx-auto">Calculate</button>
                 </div>
                 <!-- Pentagon -->
-                <div class="bg-white rounded-lg p-10 text-center border-2 border-gray">
+                <div id="pentagon-random" class="bg-white rounded-lg p-10 text-center border-2 border-gray">
                     <img class="w-[350px] rounded-lg mb-4" src="./images/pentagon.png" alt="Pentagon">
                     <h2 class="text-2xl font-bold mb-2">Pentagon</h2>
                     <p>Area (A) = 0.5 * p * b</p>
@@ -90,7 +103,7 @@
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-12 rounded mt-4 mx-auto">Calculate</button>
                 </div>
                 <!-- Ellipse -->
-                <div class="bg-white rounded-lg p-10 text-center border-2 border-gray">
+                <div id="ellipse-random" class="bg-white rounded-lg p-10 text-center border-2 border-gray">
                     <img class="w-[350px] rounded-lg mb-4" src="./images/ellipse.png" alt="Ellipse">
                     <h2 class="text-2xl font-bold mb-2">Ellipse</h2>
                     <p class="my-8">Area (A) = π*ab</p>
@@ -105,6 +118,7 @@
     <!-- Card Section End -->
     <!-- Js CDN -->
     <script src="./js/script.js"></script>
+    <script src="./js/randomColor.js"></script>
 </body>
 
 </html>
