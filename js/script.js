@@ -12,19 +12,29 @@ function getInputText(textId) {
     return textFieldNumber;
 }
 // OutPut Field for common Function
+let serialNumber = 0;
 function getOutputValue(outputId, value) {
-    const outputField = document.getElementById(outputId)
-    outputField.innerText = value;
+    serialNumber++;
+    const outputField = document.getElementById(outputId);
+    outputField.innerText = serialNumber + '. ' + value;
 }
+
 //Get Triangle Area
 document.getElementById('btn-triangle').addEventListener('click', function () {
     const triangleBase = getInputValue('tri-base')
     const triangleHeight = getInputValue('tri-height')
     const triangleArea = 0.5 * triangleBase * triangleHeight;
     const triangleAreaWithComment = 'Triangle Area is :' + triangleArea;
+
+    // For Validation
+    if (isNaN(triangleBase) || isNaN(triangleHeight) || triangleBase < 0 || triangleHeight < 0) {
+        alert("Please input valid numbers");
+        return;
+    }
     const outputField = getOutputValue('output-triangle', triangleAreaWithComment)
 
 })
+
 
 // Get Rectangle Area
 document.getElementById('btn-rectangle').addEventListener('click', function () {
@@ -32,6 +42,11 @@ document.getElementById('btn-rectangle').addEventListener('click', function () {
     const rectangleLength = getInputValue('rec-length')
     const rectangleArea = rectangleWidth * rectangleLength;
     const rectangleAreaWithComment = 'Rectangle Area is :' + rectangleArea;
+    // For Validation
+    if (isNaN(rectangleWidth) || isNaN(rectangleLength) || rectangleWidth < 0 || rectangleLength < 0) {
+        alert("Please input valid numbers");
+        return;
+    }
     const outputField = getOutputValue('output-rectangle', rectangleAreaWithComment)
 })
 
@@ -72,6 +87,5 @@ document.getElementById('btn-ellipse').addEventListener('click', function () {
     const ellipseAreaWithComment = 'Ellipse Area is :' + ' ' + ellipseArea.toFixed(2);
     const outputField = getOutputValue('output-ellipse', ellipseAreaWithComment)
 })
-
 
 
