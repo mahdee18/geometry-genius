@@ -11,7 +11,7 @@ document.getElementById('btn-triangle').addEventListener('click', function () {
         return;
     }
     const triangleAreaOutput = document.getElementById('triangle-area-output')
-    triangleAreaOutput.innerText = '0';
+    triangleAreaOutput.innerText = '';
     const totalTriangleArea = triangleArea + triangleAreaOutput.innerText;
     triangleAreaOutput.innerText = totalTriangleArea;
     getButtonById('triangle-area-total')
@@ -31,7 +31,7 @@ document.getElementById('btn-rectangle').addEventListener('click', function () {
         return;
     }
     const rectangleAreaOutput = document.getElementById('rectangle-area-output')
-    rectangleAreaOutput.innerText = '0';
+    rectangleAreaOutput.innerText = '';
     const totalRectangleArea = rectangleArea + rectangleAreaOutput.innerText;
     rectangleAreaOutput.innerText = totalRectangleArea;
     getButtonById('rectangle-area-total')
@@ -44,7 +44,7 @@ document.getElementById('btn-parallelogram').addEventListener('click', function 
     const parallelogramArea = parallelogramBase * parallelogramHeight;
 
     const parallelogramAreaOutput = document.getElementById('parallelogram-area-output')
-    parallelogramAreaOutput.innerText = '0';
+    parallelogramAreaOutput.innerText = '';
     const totalParallelogramArea = parallelogramArea + parallelogramAreaOutput.innerText;
     parallelogramAreaOutput.innerText = totalParallelogramArea;
     getButtonById('parallelogram-area-total')
@@ -58,7 +58,7 @@ document.getElementById('btn-rhombus').addEventListener('click', function () {
     const rhombusArea = 0.5 * firstDiagonal * secondDiagonal;
 
     const rhombusAreaOutput = document.getElementById('rhombus-area-output')
-    rhombusAreaOutput.innerText = '0';
+    rhombusAreaOutput.innerText = '';
     const totalRhombusArea = rhombusArea + rhombusAreaOutput.innerText;
     rhombusAreaOutput.innerText = totalRhombusArea;
     getButtonById('rhombus-area-total')
@@ -71,7 +71,7 @@ document.getElementById('btn-pentagon').addEventListener('click', function () {
     const pentagonArea = 0.5 * pentagonPerimeter * pentagonApothem;
 
     const pentagonAreaOutput = document.getElementById('pentagon-area-output')
-    pentagonAreaOutput.innerText = '0';
+    pentagonAreaOutput.innerText = '';
     const totalPentagonArea = pentagonArea + pentagonAreaOutput.innerText;
     pentagonAreaOutput.innerText = totalPentagonArea;
     getButtonById('pentagon-area-total')
@@ -83,11 +83,11 @@ document.getElementById('btn-ellipse').addEventListener('click', function () {
     const PIE = 3.1416
     const ellipseArea = PIE * axisA * axisB;
 
-    const ellipseAreaOutput = document.getElementById('ellipse-area-output')
-    ellipseAreaOutput.innerText = '0';
-    const totalEllipseArea = ellipseArea + ellipseAreaOutput.innerText;
-    ellipseAreaOutput.innerText = totalEllipseArea;
+    const ellipseAreaOutput = document.getElementById('ellipse-area-output');
+    const currentTotal = parseFloat(ellipseAreaOutput.innerText);
+    const totalEllipseArea = currentTotal + ellipseArea;
+    ellipseAreaOutput.innerText = totalEllipseArea.toFixed(2);
     getButtonById('ellipse-area-total')
-})
+});
 
 
