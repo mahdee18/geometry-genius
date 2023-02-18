@@ -13,11 +13,13 @@ function getInputText(textId) {
 }
 // OutPut Field for common Function
 let serialNumber = 0;
-function getOutputValue(outputId, value) {
+
+function getOutputValue(outputId, value, superscriptText) {
     serialNumber++;
     const outputField = document.getElementById(outputId);
-    outputField.innerText = serialNumber + '. ' + value;
+    outputField.innerHTML = `${serialNumber}. ${value} cm <sup>${2}</sup>`;
 }
+
 
 //Get Triangle Area
 document.getElementById('btn-triangle').addEventListener('click', function () {
@@ -32,6 +34,9 @@ document.getElementById('btn-triangle').addEventListener('click', function () {
         return;
     }
     const outputField = getOutputValue('output-triangle', triangleAreaWithComment)
+    
+    const myButton = document.getElementById('triangleButton');
+    myButton.style.display = 'block';
 
 })
 
@@ -42,13 +47,16 @@ document.getElementById('btn-rectangle').addEventListener('click', function () {
     const rectangleWidth = getInputValue('rec-width')
     const rectangleLength = getInputValue('rec-length')
     const rectangleArea = rectangleWidth * rectangleLength;
-    const rectangleAreaWithComment = 'Rectangle Area is :' + rectangleArea + 'cm';
+    const rectangleAreaWithComment = 'Rectangle Area is :' + rectangleArea;
     // For Validation
     if (isNaN(rectangleWidth) || isNaN(rectangleLength) || rectangleWidth < 0 || rectangleLength < 0) {
         alert("Please input valid numbers");
         return;
     }
     const outputField = getOutputValue('output-rectangle', rectangleAreaWithComment)
+
+    const myButton = document.getElementById('rectangleButton');
+    myButton.style.display = 'block';
 })
 
 // Get Parallelogram Area
